@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: file-server
+
+cloud:
+  aws:
+    s3:
+      endpoint: ${CLOUD_HOST:http://localhost:9000}
+      image-bucket: ${PREVIEW-IMAGE-BUCKET:image-bucket}
+      access-key: ${CLOUD_ACCESS_KEY:minioadmin}
+      secret-key: ${CLOUD_SECRET_KEY:minioadmin}
