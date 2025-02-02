@@ -9,3 +9,7 @@ cloud:
       image-bucket: ${PREVIEW-IMAGE-BUCKET:image-bucket}
       access-key: ${CLOUD_ACCESS_KEY:minioadmin}
       secret-key: ${CLOUD_SECRET_KEY:minioadmin}
+
+logging:
+  level:
+    root: DEBUG

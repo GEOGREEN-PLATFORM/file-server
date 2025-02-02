@@ -1,5 +1,6 @@
-package com.example.fileserver.controller;
+package com.example.fileserver.controller.impl;
 
+import com.example.fileserver.controller.ImageController;
 import com.example.fileserver.model.dto.ImageUrlResponse;
 import com.example.fileserver.service.ImageService;
 import lombok.RequiredArgsConstructor;
