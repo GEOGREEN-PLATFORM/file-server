@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>file-server</artifactId>
-	<version>0.1.0</version>
+	<version>${geospatial-server.version}</version>
 	<name>file-server</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -27,19 +27,20 @@
 		<url/>
 	</scm>
 	<properties>
+		<geospatial-server.version>0.1.0</geospatial-server.version>
 		<java.version>21</java.version>
-		<flywaydb.version>9.22.1</flywaydb.version>
 		<lombok.version>1.18.30</lombok.version>
 		<springdoc.version>2.3.0</springdoc.version>
-		<mapstruct.version>1.5.2.Final</mapstruct.version>
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<minio.version>8.2.0</minio.version>
+		<filters.version>2.0.235-1</filters.version>
+		<thumbnailator.version>0.4.8</thumbnailator.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -54,7 +55,7 @@
 		<dependency>
 			<groupId>io.minio</groupId>
 			<artifactId>minio</artifactId>
-			<version> 8.2.0 </version>
+			<version>${minio.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -69,12 +70,12 @@
 		<dependency>
 			<groupId>com.jhlabs</groupId>
 			<artifactId>filters</artifactId>
-			<version>2.0.235-1</version>
+			<version>${filters.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
-			<version>0.4.8</version>
+			<version>${thumbnailator.version}</version>
 		</dependency>
 	</dependencies>
 

@@ -19,6 +19,7 @@ import java.util.UUID;
 public class ImageControllerImpl implements ImageController {
     private final ImageService imageService;
 
+    //todo найстроить работу с разными типами изображений
     @Override
     public ResponseEntity<ImageUrlResponse> uploadImage(MultipartFile file) {
         return ResponseEntity.ok(imageService.uploadImage(file));

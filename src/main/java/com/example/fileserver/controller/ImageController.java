@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ import java.util.UUID;
 @RequestMapping("/file/image")
 public interface ImageController {
     @Operation(
-            summary = "Загрузка изображения - превью и фул"
+            summary = "Загрузка изображения - превью и фул. Формат - jpeg, png"
     )
     @ApiResponses(
             value = {
@@ -36,6 +37,14 @@ public interface ImageController {
                     @ApiResponse(
                             responseCode = "400",
                             description = "Некорректные данные",
+                            content = @Content(
+                                    mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation = ApplicationError.class)
+                            )
+                    ),
+                    @ApiResponse(
+                            responseCode = "413",
+                            description = "Изображение слишком большое",
                             content = @Content(
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
                                     schema = @Schema(implementation = ApplicationError.class)

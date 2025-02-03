@@ -1,6 +1,20 @@
+server:
+  port: {SERVER_PORT:8080}
+
 spring:
   application:
     name: file-server
+  servlet:
+    multipart:
+      max-file-size: ${MAX_IMAGE_SIZE:5MB}
+      max-request-size: ${MAX_IMAGE_SIZE:5MB}
+
+image:
+  preview:
+    quality: 0.3 # от 0.0 до 1.0
+    blur: 25.0f
+  full:
+    quality: 0.7 # от 0.0 до 1.0
 
 cloud:
   aws:

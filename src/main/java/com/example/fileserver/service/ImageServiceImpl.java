@@ -17,6 +17,8 @@ import io.minio.errors.InvalidResponseException;
 import io.minio.errors.ServerException;
 import io.minio.errors.XmlParserException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,7 +33,15 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ImageServiceImpl implements ImageService {
+    @Value("${image.preview.quality}")
+    private double previewQuality;
+    @Value("${image.preview.blur}")
+    private float previewBlur;
+    @Value("${image.full.quality}")
+    private double fullQuality;
+
     private final ImageEditor imageEditor;
     private final MinioProperties properties;
     private final MinioClient minioClient;
@@ -43,6 +53,7 @@ public class ImageServiceImpl implements ImageService {
             var fullImageId = saveFullImage(file);
             return ImageUrlResponse.builder().previewImageId(previewImageId).fullImageId(fullImageId).build();
         } catch (Exception e) {
+            log.debug(e.getMessage());
             throw new RuntimeException("Ошибка при сохранении изображения. Попробуйте позже");
         }
     }
@@ -51,8 +62,8 @@ public class ImageServiceImpl implements ImageService {
         var bucketName = properties.getImageBucket();
         var imageId = UUID.randomUUID();
         checkAndCreateBucket(bucketName);
-        var blurImage = imageEditor.blur(ImageIO.read(file.getInputStream()), 50.0f);
-        var zipImage = imageEditor.zip(blurImage, 0.3);
+        var blurImage = imageEditor.blur(ImageIO.read(file.getInputStream()), previewBlur);
+        var zipImage = imageEditor.zip(blurImage, previewQuality);
         saveImage(bucketName, zipImage, imageId.toString(), file.getContentType());
         return imageId;
     }
@@ -61,7 +72,7 @@ public class ImageServiceImpl implements ImageService {
         String bucketName = properties.getImageBucket();
         var imageId = UUID.randomUUID();
         checkAndCreateBucket(bucketName);
-        var zipImage = imageEditor.zip(ImageIO.read(file.getInputStream()), 0.7);
+        var zipImage = imageEditor.zip(ImageIO.read(file.getInputStream()), fullQuality);
         saveImage(bucketName, zipImage, imageId.toString(), file.getContentType());
         return imageId;
     }
@@ -117,7 +128,7 @@ public class ImageServiceImpl implements ImageService {
                 .getObject(GetObjectArgs.builder()
                         .bucket(properties.getImageBucket())
                         .object(String.valueOf(objectName))
-                        .build());) {
+                        .build())) {
             return stream.readAllBytes();
         } catch (Exception e) {
             throw new ObjectNotFoundException("Файл не найден");
