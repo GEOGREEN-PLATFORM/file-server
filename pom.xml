@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>file-server</artifactId>
-	<version>${geospatial-server.version}</version>
+	<version>${file-server.version}</version>
 	<name>file-server</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<geospatial-server.version>0.1.0</geospatial-server.version>
+		<file-server.version>0.1.0</file-server.version>
 		<java.version>21</java.version>
 		<lombok.version>1.18.30</lombok.version>
 		<springdoc.version>2.3.0</springdoc.version>
