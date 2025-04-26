@@ -6,8 +6,8 @@ spring:
     name: file-server
   servlet:
     multipart:
-      max-file-size: ${MAX_IMAGE_SIZE:5MB}
-      max-request-size: ${MAX_IMAGE_SIZE:5MB}
+      max-file-size: ${MAX_IMAGE_SIZE:15MB}
+      max-request-size: ${MAX_IMAGE_SIZE:15MB}
 
 image:
   preview:
@@ -26,4 +26,4 @@ cloud:
 
 logging:
   level:
-    root: DEBUG
+    root: ${LOG_LEVEL:DEBUG}
