@@ -1,9 +1,11 @@
-package com.example.fileserver.service;
+package com.example.fileserver.service.impl;
 
 
 import com.example.fileserver.configuration.MinioProperties;
 import com.example.fileserver.exception.ObjectNotFoundException;
 import com.example.fileserver.model.dto.ImageUrlResponse;
+import com.example.fileserver.service.ImageEditor;
+import com.example.fileserver.service.ImageService;
 import io.minio.BucketExistsArgs;
 import io.minio.GetObjectArgs;
 import io.minio.MakeBucketArgs;
