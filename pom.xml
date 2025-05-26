@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<file-server.version>0.1.4</file-server.version>
+		<file-server.version>0.1.5</file-server.version>
 		<java.version>21</java.version>
 		<lombok.version>1.18.30</lombok.version>
 		<springdoc.version>2.3.0</springdoc.version>
