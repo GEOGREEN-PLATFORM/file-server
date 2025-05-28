@@ -1,8 +1,8 @@
-package com.example.fileserver.controller;
+package com.example.file_server.controller;
 
-import com.example.fileserver.controller.impl.ImageControllerImpl;
-import com.example.fileserver.model.dto.ImageUrlResponse;
-import com.example.fileserver.service.ImageService;
+import com.example.file_server.controller.impl.ImageControllerImpl;
+import com.example.file_server.model.dto.ImageUrlResponse;
+import com.example.file_server.service.ImageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

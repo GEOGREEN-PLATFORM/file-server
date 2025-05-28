@@ -1,6 +1,6 @@
-package com.example.fileserver.service;
+package com.example.file_server.service;
 
-import com.example.fileserver.model.dto.ImageUrlResponse;
+import com.example.file_server.model.dto.ImageUrlResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;

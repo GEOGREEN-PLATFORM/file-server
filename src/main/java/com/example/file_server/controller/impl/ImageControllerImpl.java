@@ -1,8 +1,8 @@
-package com.example.fileserver.controller.impl;
+package com.example.file_server.controller.impl;
 
-import com.example.fileserver.controller.ImageController;
-import com.example.fileserver.model.dto.ImageUrlResponse;
-import com.example.fileserver.service.ImageService;
+import com.example.file_server.controller.ImageController;
+import com.example.file_server.model.dto.ImageUrlResponse;
+import com.example.file_server.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
-package com.example.fileserver.service;
+package com.example.file_server.service;
 
-import com.example.fileserver.configuration.MinioProperties;
-import com.example.fileserver.service.impl.ImageServiceImpl;
+import com.example.file_server.configuration.MinioProperties;
+import com.example.file_server.service.impl.ImageServiceImpl;
 import io.minio.BucketExistsArgs;
 import io.minio.MinioClient;
 import org.junit.jupiter.api.BeforeEach;

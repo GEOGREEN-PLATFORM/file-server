@@ -1,4 +1,4 @@
-package com.example.fileserver.service;
+package com.example.file_server.service;
 
 import com.jhlabs.image.GaussianFilter;
 import net.coobird.thumbnailator.Thumbnails;

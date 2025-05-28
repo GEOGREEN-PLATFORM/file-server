@@ -1,4 +1,4 @@
-package com.example.fileserver.service;
+package com.example.file_server.service;
 
 import org.junit.jupiter.api.Test;
 

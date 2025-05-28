@@ -1,4 +1,4 @@
-package com.example.fileserver.exception;
+package com.example.file_server.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

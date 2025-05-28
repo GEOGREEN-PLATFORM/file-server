@@ -1,4 +1,4 @@
-package com.example.fileserver.configuration;
+package com.example.file_server.configuration;
 
 import io.minio.MinioClient;
 import org.springframework.beans.factory.annotation.Autowired;
