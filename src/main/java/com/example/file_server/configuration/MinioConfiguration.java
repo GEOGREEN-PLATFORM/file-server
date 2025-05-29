@@ -1,4 +1,4 @@
-package com.example.fileserver.configuration;
+package com.example.file_server.configuration;
 
 import io.minio.MinioClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +17,7 @@ public class MinioConfiguration {
     public MinioClient minioClient() {
         return MinioClient.builder()
                 .endpoint(properties.getEndpoint())
-                .credentials(properties.getAccessKey(), properties.getSecretKey()).build();
+                .credentials(properties.getAccessKey(), properties.getSecretKey())
+                .build();
     }
 }

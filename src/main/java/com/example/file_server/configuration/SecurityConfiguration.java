@@ -1,4 +1,4 @@
-package com.example.fileserver.configuration;
+package com.example.file_server.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

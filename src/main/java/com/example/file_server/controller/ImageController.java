@@ -1,13 +1,12 @@
-package com.example.fileserver.controller;
+package com.example.file_server.controller;
 
-import com.example.fileserver.exception.ApplicationError;
-import com.example.fileserver.model.dto.ImageUrlResponse;
+import com.example.file_server.exception.ApplicationError;
+import com.example.file_server.model.dto.ImageUrlResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

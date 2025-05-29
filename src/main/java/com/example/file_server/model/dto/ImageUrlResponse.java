@@ -1,4 +1,4 @@
-package com.example.fileserver.model.dto;
+package com.example.file_server.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
