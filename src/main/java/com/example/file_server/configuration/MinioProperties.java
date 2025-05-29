@@ -1,4 +1,4 @@
-package com.example.fileserver.configuration;
+package com.example.file_server.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

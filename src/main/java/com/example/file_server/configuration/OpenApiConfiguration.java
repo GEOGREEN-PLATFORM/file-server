@@ -1,4 +1,4 @@
-package com.example.fileserver.configuration;
+package com.example.file_server.configuration;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

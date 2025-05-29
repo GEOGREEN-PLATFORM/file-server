@@ -1,8 +1,8 @@
-package com.example.fileserver.controller.impl;
+package com.example.file_server.controller.impl;
 
-import com.example.fileserver.controller.ImageController;
-import com.example.fileserver.model.dto.ImageUrlResponse;
-import com.example.fileserver.service.ImageService;
+import com.example.file_server.controller.ImageController;
+import com.example.file_server.model.dto.ImageUrlResponse;
+import com.example.file_server.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,6 @@ import java.util.UUID;
 public class ImageControllerImpl implements ImageController {
     private final ImageService imageService;
 
-    //todo найстроить работу с разными типами изображений
     @Override
     public ResponseEntity<ImageUrlResponse> uploadImage(MultipartFile file) {
         return ResponseEntity.ok(imageService.uploadImage(file));
